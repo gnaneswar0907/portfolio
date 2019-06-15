@@ -1,0 +1,91 @@
+.LandingPage {
+  position: relative;
+}
+
+.LandingPage .Background {
+  filter: blur(6px);
+}
+
+.LandingPage .HomeContent {
+  position: absolute;
+  top: 0;
+  display: inline-flexbox;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.LandingPage .HomeContent .UserName,
+.LandingPage .HomeContent .HomeMenu {
+  margin-left: 50px;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+.LandingPage .HomeContent .GridContainer {
+  height: 100%;
+}
+
+.LandingPage .HomeContent .MainContent {
+  margin: auto;
+  padding-bottom: 70px;
+  width: 6em;
+  font-size: 90px;
+  line-height: 1.2em;
+  font-family: "Libre Baskerville", serif;
+  animation-name: mainText;
+  animation-duration: 4s;
+  -webkit-animation-name: mainText;
+  -webkit-animation-duration: 4s;
+  animation-timing-function: ease-in;
+}
+
+@keyframes mainText {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes mainText {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.MainContent p {
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.HomeContent .DownIcon {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid white;
+  cursor: pointer;
+  font-size: 30px !important;
+}
