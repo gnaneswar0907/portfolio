@@ -1,5 +1,6 @@
 .LandingPage {
   position: relative;
+  height: 100%;
 }
 
 .LandingPage .Background {
@@ -18,12 +19,18 @@
 
 .LandingPage .HomeContent .UserName,
 .LandingPage .HomeContent .HomeMenu {
-  margin-left: 50px;
-  margin-top: 50px;
+  margin-top: 30px;
+  z-index: 10;
   cursor: pointer;
+  margin-right: 50px;
 }
 
-.LandingPage .HomeContent .GridContainer {
+.LandingPage .HomeContent .UserName {
+  font-family: "Libre Baskerville", serif;
+}
+
+.LandingPage .HomeContent .GridContainer,
+.pushable .pusher {
   height: 100%;
 }
 
@@ -88,4 +95,15 @@
   border: 1px solid white;
   cursor: pointer;
   font-size: 30px !important;
+}
+
+.HomeContent .HomeSideBar {
+  font-size: 30px !important;
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.HomeContent .HomeSideBar .MenuItem {
+  color: white !important;
+  cursor: pointer;
+  font-family: "Libre Baskerville", serif;
 }
