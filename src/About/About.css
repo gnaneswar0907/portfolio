@@ -1,6 +1,61 @@
 .AboutRow {
+  background-color: #4570e0;
+  padding: 0 !important;
 }
-.AboutColumn {
+
+.MenuIcon {
+  position: absolute;
+  z-index: 10;
+  top: 3%;
+  right: 3%;
+  color: white;
+}
+
+.AboutRow .AboutColumn {
   height: 100%;
-  background-color: aqua;
+}
+
+.AboutRow .AboutContent {
+  color: white;
+  font-family: "Libre Baskerville", serif;
+  margin-left: 70px;
+}
+
+.AboutRow .AboutContent .Heading {
+  font-size: 70px;
+  width: 500px;
+}
+
+.AboutRow .AboutContent .Content {
+  width: 600px;
+  font-size: 15px;
+  line-height: 27px;
+  text-align: justify;
+}
+
+.Motto {
+  background-color: white;
+  padding: 0 !important;
+}
+
+.Motto .Item:hover {
+  background-color: #f9f9f9;
+}
+
+.Motto .Item .ItemBody {
+  padding-left: 120px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-right: 120px;
+}
+
+.Motto .Item .ItemBody .ItemHeader {
+  font-size: 38px;
+  line-height: 42px;
+}
+
+.Motto .Item .ItemBody .ItemContent {
+  font-size: 15px;
+  line-height: 27px;
+  color: #676767;
 }

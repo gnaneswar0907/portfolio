@@ -1,28 +1,88 @@
 import React from "react";
 
-import mine from "./Mine.jpeg";
-import { Grid, Image } from "semantic-ui-react";
+import about from "./about.jpeg";
+import { Grid, Image, Icon } from "semantic-ui-react";
 
 import "./About.css";
 
 class About extends React.Component {
+  state = { menuActive: false };
+
+  openMenu = () => this.setState({ menuActive: true });
+
+  closeMenu = () => this.setState({ menuActive: false });
+
   render() {
     return (
-      <Grid>
-        <Grid.Row>
-          <Grid.Column width={8}>
-            <Image fluid src={mine} />
-          </Grid.Column>
-          <Grid.Column
-            className="AboutColumn"
-            textAlign="center"
-            verticalAlign="middle"
-            width={8}
-          >
-            <h2>Gnaneswar Gandu</h2>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+      <>
+        <Grid stackable style={{ position: "relative" }} verticalAlign="middle">
+          <Grid.Row className="AboutRow">
+            <Grid.Column width={8}>
+              <Image fluid src={about} />
+            </Grid.Column>
+            <Grid.Column width={8}>
+              <div className="AboutContent">
+                <h1 className="Heading">Gnaneswar Gandu</h1>
+                <p className="Content">
+                  I am a seasoned software developer who has developed products
+                  for various clients and many venture-backed businesses. I
+                  specialize in building applications specific to the business
+                  needs of my clients. I have done work in software development,
+                  mobile app creation, front-end/back-end web, database/server
+                  management, graphic design, and video game development.
+                </p>
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row columns="equal" className="Motto">
+            <Grid.Column className="Item">
+              <div className="ItemBody">
+                <h3 className="ItemHeader">
+                  <span style={{ color: "#cccccc" }}>01. </span>
+                  Research
+                </h3>
+                <p className="ItemContent">
+                  Understand the client’s subject matter completely and build on
+                  the knowledge related to it, becoming intimately familiar with
+                  the subject matter. Determine methods to address the specific
+                  customer’s needs and requirements.
+                </p>
+              </div>
+            </Grid.Column>
+            <Grid.Column className="Item">
+              <div className="ItemBody">
+                <h3 className="ItemHeader">
+                  <span style={{ color: "#cccccc" }}>02. </span>
+                  Design
+                </h3>
+                <p className="ItemContent">
+                  Misleadingly thought of as the superficial appearance of a
+                  product, design actually encompasses a lot more. It is a cross
+                  functional process that includes market research, technical
+                  research, design of a concept, and prototype mockup.
+                </p>
+              </div>
+            </Grid.Column>
+            <Grid.Column className="Item">
+              <div className="ItemBody">
+                <h3 className="ItemHeader">
+                  <span style={{ color: "#cccccc" }}>03. </span>
+                  Develop
+                </h3>
+                <p className="ItemContent">
+                  Findings from the research and design phases are utilized for
+                  the production of specific products including materials,
+                  systems, and methods. Engineer utilizing the research and
+                  designs to produce commercial products for the customer.
+                </p>
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+        <span className="MenuIcon">
+          <Icon link name="sidebar" size="big" />
+        </span>
+      </>
     );
   }
 }

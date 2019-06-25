@@ -47,6 +47,7 @@ export class LandingPage extends React.Component {
             </Sidebar>
             <Sidebar.Pusher>
               <Grid
+                stackable
                 className="GridContainer"
                 padded
                 columns={3}
@@ -77,6 +78,7 @@ export class LandingPage extends React.Component {
                 </Grid.Column>
                 <Grid.Column floated="right" textAlign="right" width={3}>
                   <Icon
+                    link
                     onClick={this.handleSideBar}
                     className="HomeMenu"
                     name={this.state.visible ? "" : "sidebar"}
