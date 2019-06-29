@@ -1,20 +1,36 @@
 import React from "react";
 
 import about from "./about.jpeg";
-import { Grid, Image, Icon } from "semantic-ui-react";
+import { Grid, Image, Icon, Sidebar } from "semantic-ui-react";
 
 import "./About.css";
+import MySideBar from "../SideBar";
+import { Menu } from "../Menu/Menu";
 
 class About extends React.Component {
-  state = { menuActive: false };
+  state = { menuActive: false, menuClass: "" };
 
-  openMenu = () => this.setState({ menuActive: true });
+  toggleMenu = () => {
+    const { menuActive, menuClass } = this.state;
+    const newMenuClass = menuClass === "Menu" ? "MenuReverse" : "Menu";
+    this.setState({ menuActive: !menuActive, menuClass: newMenuClass });
+  };
 
   closeMenu = () => this.setState({ menuActive: false });
 
   render() {
+    const { menuActive, menuClass } = this.state;
     return (
-      <>
+      <div style={{ position: "relative" }}>
+        {/* <Sidebar.Pushable style={{ backgroundColor: "#cccccc" }}>
+          <MySideBar
+            visible={this.state.menuActive}
+            handleSideBarHide={this.closeMenu}
+          />
+          <Sidebar.Pusher>
+            
+          </Sidebar.Pusher>
+        </Sidebar.Pushable> */}
         <Grid stackable style={{ position: "relative" }} verticalAlign="middle">
           <Grid.Row className="AboutRow">
             <Grid.Column width={8}>
@@ -80,9 +96,15 @@ class About extends React.Component {
           </Grid.Row>
         </Grid>
         <span className="MenuIcon">
-          <Icon link name="sidebar" size="big" />
+          <Icon
+            onClick={this.toggleMenu}
+            link
+            name={menuActive ? "cancel" : "sidebar"}
+            size="big"
+          />
         </span>
-      </>
+        <Menu className={menuClass} />
+      </div>
     );
   }
 }

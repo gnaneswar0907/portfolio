@@ -1,0 +1,10 @@
+.SideBar {
+  font-size: 30px !important;
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.SideBar .MenuItem {
+  color: white !important;
+  cursor: pointer;
+  font-family: "Libre Baskerville", serif;
+}

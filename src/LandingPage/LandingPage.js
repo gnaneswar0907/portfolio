@@ -1,11 +1,11 @@
 import React from "react";
 
-import { Icon, Grid, Sidebar, Menu } from "semantic-ui-react";
+import { Icon, Grid, Sidebar } from "semantic-ui-react";
 
-import { Link } from "react-router-dom";
+import MySideBar from "../SideBar";
 
-import landingPage from "./landingpage.jpg";
 import "./LandingPage.css";
+import landingPage from "./landingpage.jpg";
 
 export class LandingPage extends React.Component {
   state = { visible: false };
@@ -28,23 +28,10 @@ export class LandingPage extends React.Component {
         />
         <div className="HomeContent">
           <Sidebar.Pushable>
-            <Sidebar
-              animation="scale down"
-              direction="top"
+            <MySideBar
               visible={this.state.visible}
-              onHide={this.handleSideBarHide}
-            >
-              <Menu className="HomeSideBar" fluid widths={4}>
-                <Menu.Item className="MenuItem" active>
-                  Home
-                </Menu.Item>
-                <Menu.Item as={Link} to="./about" className="MenuItem">
-                  About
-                </Menu.Item>
-                <Menu.Item className="MenuItem">Resume</Menu.Item>
-                <Menu.Item className="MenuItem">Contact</Menu.Item>
-              </Menu>
-            </Sidebar>
+              handleSideBarHide={this.handleSideBarHide}
+            />
             <Sidebar.Pusher>
               <Grid
                 stackable
@@ -66,14 +53,12 @@ export class LandingPage extends React.Component {
                     <p>
                       Get ready to turn your <i>ideas</i> into <i>reality</i>
                     </p>
-                    <span>
-                      <Icon
-                        className="DownIcon"
-                        size="tiny"
-                        circular
-                        name="angle down"
-                      />
-                    </span>
+                    <Icon
+                      className="DownIcon"
+                      size="tiny"
+                      circular
+                      name="angle down"
+                    />
                   </section>
                 </Grid.Column>
                 <Grid.Column floated="right" textAlign="right" width={3}>

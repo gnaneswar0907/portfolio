@@ -96,14 +96,3 @@
   cursor: pointer;
   font-size: 30px !important;
 }
-
-.HomeContent .HomeSideBar {
-  font-size: 30px !important;
-  background-color: rgba(0, 0, 0, 0.4) !important;
-}
-
-.HomeContent .HomeSideBar .MenuItem {
-  color: white !important;
-  cursor: pointer;
-  font-family: "Libre Baskerville", serif;
-}

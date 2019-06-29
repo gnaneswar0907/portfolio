@@ -5,7 +5,7 @@
 
 .MenuIcon {
   position: absolute;
-  z-index: 10;
+  z-index: 20;
   top: 3%;
   right: 3%;
   color: white;
