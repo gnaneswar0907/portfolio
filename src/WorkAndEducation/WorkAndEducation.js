@@ -8,9 +8,9 @@ import {
   VerticalTimelineElement
 } from "react-vertical-timeline-component";
 
-import "./Projects.css";
+import "./WorkAndEducation.css";
 
-export const Projects = () => {
+export const WorkAndEducation = () => {
   return (
     <VerticalTimeline>
       <VerticalTimelineElement

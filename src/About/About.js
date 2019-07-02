@@ -3,22 +3,34 @@ import React from "react";
 import about from "./about.jpeg";
 import { Grid, Image, Icon } from "semantic-ui-react";
 
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks
+} from "body-scroll-lock";
+
 import "./About.css";
 import Menu from "../Menu";
-import Projects from "../projects";
+import WorkAndEducation from "../WorkAndEducation";
 import Skills from "../Skills";
 
-class About extends React.Component {
+export class About extends React.Component {
   state = { menuActive: false, menuClass: "" };
+
+  componentDidMount() {
+    clearAllBodyScrollLocks(this.bodyRef);
+  }
 
   toggleMenu = () => {
     const { menuActive, menuClass } = this.state;
     const newMenuClass = menuClass === "Menu" ? "MenuReverse" : "Menu";
     if (menuActive) {
+      enableBodyScroll(this.bodyRef);
       this.setState({ menuClass: newMenuClass }, () => {
         setTimeout(() => this.setState({ menuActive: !menuActive }), 1000);
       });
     } else {
+      disableBodyScroll(this.bodyRef);
       this.setState({ menuActive: !menuActive, menuClass: newMenuClass });
     }
   };
@@ -28,7 +40,7 @@ class About extends React.Component {
   render() {
     const { menuActive, menuClass } = this.state;
     return (
-      <div style={{ position: "relative" }}>
+      <div ref={node => (this.bodyRef = node)} style={{ position: "relative" }}>
         <Grid stackable style={{ position: "relative" }} verticalAlign="middle">
           <Grid.Row className="AboutRow">
             <Grid.Column width={8}>
@@ -95,7 +107,7 @@ class About extends React.Component {
           <Grid.Row className="WorkAndEducation">
             <Grid.Column width={16}>
               <h2 className="Header">Work Experience and Education</h2>
-              <Projects />
+              <WorkAndEducation />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row className="Skills">
@@ -132,5 +144,3 @@ class About extends React.Component {
     );
   }
 }
-
-export default About;

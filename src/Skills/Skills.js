@@ -14,11 +14,6 @@ import sql from "./images/sql.svg";
 
 const languages = [
   {
-    image: java,
-    description: "Experienced",
-    extras: ["MultiThreading", "Executor Framework"]
-  },
-  {
     image: javascript,
     description: "Experienced",
     extras: ["ES6", "Jquery"]
@@ -27,6 +22,11 @@ const languages = [
     image: react,
     description: "Experienced",
     extras: ["Redux", "React Native"]
+  },
+  {
+    image: java,
+    description: "Experienced",
+    extras: ["MultiThreading", "Executor Framework"]
   },
   {
     image: nodejs,
@@ -93,7 +93,7 @@ export const Skills = ({ wide }) => {
         <div className="Skills">
           {database.map(({ image, description, extras }, index) => (
             <Skill key={index} index={index} image={image}>
-              <h2 style={{ marginTop: "25%" }}>{description}</h2>
+              <h2 style={{ marginTop: "40%" }}>{description}</h2>
               {extras
                 ? extras.map((extra, index) => <p key={index}>{extra}</p>)
                 : ""}
