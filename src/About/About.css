@@ -54,6 +54,11 @@
   margin-top: 20px;
   font-size: 38px;
   line-height: 42px;
+  padding-bottom: 35px;
+}
+
+.Skills .SkillsColumn {
+  padding-bottom: 15px;
 }
 
 .Motto {

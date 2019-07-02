@@ -6,6 +6,7 @@ import { Grid, Image, Icon } from "semantic-ui-react";
 import "./About.css";
 import Menu from "../Menu";
 import Projects from "../projects";
+import Skills from "../Skills";
 
 class About extends React.Component {
   state = { menuActive: false, menuClass: "" };
@@ -101,6 +102,21 @@ class About extends React.Component {
             <Grid.Column width={16}>
               <h2 className="Header">Things I am Good at</h2>
             </Grid.Column>
+            <Grid.Column width={4} />
+            <Grid.Column className="SkillsColumn" width={8}>
+              <Skills wide="4" />
+            </Grid.Column>
+            <Grid.Column width={4} />
+            <Grid.Column width={4} />
+            <Grid.Column className="SkillsColumn" width={8}>
+              <Skills wide="3" />
+            </Grid.Column>
+            <Grid.Column width={4} />
+            <Grid.Column width={4} />
+            <Grid.Column className="SkillsColumn" width={8}>
+              <Skills wide="2" />
+            </Grid.Column>
+            <Grid.Column width={4} />
           </Grid.Row>
         </Grid>
         <span className="MenuIcon">
