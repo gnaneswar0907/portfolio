@@ -6,7 +6,7 @@
   width: 100%;
   top: 0;
   left: 0;
-  position: absolute;
+  position: fixed;
 }
 
 .Menu {
@@ -15,8 +15,8 @@
 }
 
 .MenuReverse {
-  height: 0;
-  animation: 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s 1 slideOutFromBottom;
+  height: 0%;
+  animation: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s 1 slideOutFromBottom;
 }
 
 @keyframes slideInFromTop {
@@ -30,10 +30,36 @@
 
 @keyframes slideOutFromBottom {
   0% {
-    transform: translateY(0);
     height: 100%;
+    transform: translateY(0);
   }
   100% {
     transform: translateY(-100%);
   }
+}
+
+.Menu .MenuList {
+  top: 50%;
+  width: 100%;
+  position: absolute;
+  font-size: 55px;
+  font-weight: bolder;
+  transform: translateY(-70%);
+  line-height: 45px;
+  font-family: "Libre Baskerville", serif;
+}
+
+.Menu .MenuList .MenuItem {
+  text-align: center;
+  color: white !important;
+  opacity: 0.6;
+  font-weight: bolder;
+}
+
+.Menu .MenuList .MenuItem.Active {
+  opacity: 1;
+}
+
+.MenuReverse .MenuList {
+  visibility: hidden;
 }

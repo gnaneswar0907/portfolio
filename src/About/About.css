@@ -4,10 +4,10 @@
 }
 
 .MenuIcon {
-  position: absolute;
+  position: fixed;
   z-index: 20;
   top: 3%;
-  right: 3%;
+  right: 1%;
   color: white;
 }
 
@@ -31,6 +31,29 @@
   font-size: 15px;
   line-height: 27px;
   text-align: justify;
+}
+
+.WorkAndEducation {
+  background-color: rgb(238, 237, 237);
+  font-family: "Libre Baskerville", serif;
+}
+
+.WorkAndEducation .Header {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 38px;
+  line-height: 42px;
+}
+
+.Skills {
+  font-family: "Libre Baskerville", serif;
+}
+
+.Skills .Header {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 38px;
+  line-height: 42px;
 }
 
 .Motto {
@@ -57,5 +80,6 @@
 .Motto .Item .ItemBody .ItemContent {
   font-size: 15px;
   line-height: 27px;
+  font-family: "Libre Baskerville", serif;
   color: #676767;
 }

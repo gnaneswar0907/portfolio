@@ -19,10 +19,19 @@
 
 .LandingPage .HomeContent .UserName,
 .LandingPage .HomeContent .HomeMenu {
-  margin-top: 30px;
-  z-index: 10;
+  z-index: 20;
   cursor: pointer;
-  margin-right: 50px;
+  position: fixed;
+}
+
+.LandingPage .HomeContent .UserName {
+  top: 3%;
+  left: 2%;
+}
+
+.LandingPage .HomeContent .HomeMenu {
+  top: 3%;
+  right: 1%;
 }
 
 .LandingPage .HomeContent .UserName {
@@ -41,48 +50,6 @@
   font-size: 90px;
   line-height: 1.2em;
   font-family: "Libre Baskerville", serif;
-  animation-name: mainText;
-  animation-duration: 4s;
-  -webkit-animation-name: mainText;
-  -webkit-animation-duration: 4s;
-  animation-timing-function: ease-in;
-}
-
-@keyframes mainText {
-  0% {
-    opacity: 0;
-  }
-  25% {
-    opacity: 0.25;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  75% {
-    opacity: 0.75;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes mainText {
-  0% {
-    opacity: 0;
-  }
-  25% {
-    opacity: 0.25;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-  75% {
-    opacity: 0.75;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .MainContent p {
@@ -90,9 +57,15 @@
   font-size: 20px;
 }
 
-.HomeContent .DownIcon {
-  background-color: rgba(0, 0, 0, 0.4);
-  border: 1px solid white;
+.HomeContent .DownButton {
+  background-color: transparent;
+  color: white;
   cursor: pointer;
-  font-size: 30px !important;
+  font-size: 20px;
+}
+
+.HomeContent .DownButton:hover,
+.HomeContent .DownButton:visited {
+  background-color: #e0e1e2;
+  color: black;
 }

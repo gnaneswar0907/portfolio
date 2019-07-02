@@ -1,11 +1,11 @@
 import React from "react";
 
 import about from "./about.jpeg";
-import { Grid, Image, Icon, Sidebar } from "semantic-ui-react";
+import { Grid, Image, Icon } from "semantic-ui-react";
 
 import "./About.css";
-import MySideBar from "../SideBar";
-import { Menu } from "../Menu/Menu";
+import Menu from "../Menu";
+import Projects from "../projects";
 
 class About extends React.Component {
   state = { menuActive: false, menuClass: "" };
@@ -13,7 +13,13 @@ class About extends React.Component {
   toggleMenu = () => {
     const { menuActive, menuClass } = this.state;
     const newMenuClass = menuClass === "Menu" ? "MenuReverse" : "Menu";
-    this.setState({ menuActive: !menuActive, menuClass: newMenuClass });
+    if (menuActive) {
+      this.setState({ menuClass: newMenuClass }, () => {
+        setTimeout(() => this.setState({ menuActive: !menuActive }), 1000);
+      });
+    } else {
+      this.setState({ menuActive: !menuActive, menuClass: newMenuClass });
+    }
   };
 
   closeMenu = () => this.setState({ menuActive: false });
@@ -22,15 +28,6 @@ class About extends React.Component {
     const { menuActive, menuClass } = this.state;
     return (
       <div style={{ position: "relative" }}>
-        {/* <Sidebar.Pushable style={{ backgroundColor: "#cccccc" }}>
-          <MySideBar
-            visible={this.state.menuActive}
-            handleSideBarHide={this.closeMenu}
-          />
-          <Sidebar.Pusher>
-            
-          </Sidebar.Pusher>
-        </Sidebar.Pushable> */}
         <Grid stackable style={{ position: "relative" }} verticalAlign="middle">
           <Grid.Row className="AboutRow">
             <Grid.Column width={8}>
@@ -94,6 +91,17 @@ class About extends React.Component {
               </div>
             </Grid.Column>
           </Grid.Row>
+          <Grid.Row className="WorkAndEducation">
+            <Grid.Column width={16}>
+              <h2 className="Header">Work Experience and Education</h2>
+              <Projects />
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row className="Skills">
+            <Grid.Column width={16}>
+              <h2 className="Header">Things I am Good at</h2>
+            </Grid.Column>
+          </Grid.Row>
         </Grid>
         <span className="MenuIcon">
           <Icon
@@ -103,7 +111,7 @@ class About extends React.Component {
             size="big"
           />
         </span>
-        <Menu className={menuClass} />
+        {menuActive && <Menu className={menuClass} currentActive="about" />}
       </div>
     );
   }

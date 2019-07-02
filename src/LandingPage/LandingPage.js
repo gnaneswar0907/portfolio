@@ -1,38 +1,46 @@
 import React from "react";
 
-import { Icon, Grid, Sidebar } from "semantic-ui-react";
+import { Icon, Grid, Button } from "semantic-ui-react";
 
-import MySideBar from "../SideBar";
+import Fade from "react-reveal/Fade";
+import Zoom from "react-reveal/Zoom";
 
 import "./LandingPage.css";
 import landingPage from "./landingpage.jpg";
+import Menu from "../Menu";
 
 export class LandingPage extends React.Component {
-  state = { visible: false };
+  state = { menuActive: false, menuClass: "" };
 
-  handleSideBar = () => {
-    this.setState({ visible: !this.state.visible });
+  toggleMenu = () => {
+    const { menuActive, menuClass } = this.state;
+    const newMenuClass = menuClass === "Menu" ? "MenuReverse" : "Menu";
+    if (menuActive) {
+      this.setState({ menuClass: newMenuClass }, () => {
+        setTimeout(() => this.setState({ menuActive: !menuActive }), 1000);
+      });
+    } else {
+      this.setState({ menuActive: !menuActive, menuClass: newMenuClass });
+    }
   };
 
-  handleSideBarHide = () => this.setState({ visible: false });
-
   render() {
+    const { menuClass, menuActive } = this.state;
     return (
-      <div className="LandingPage">
-        <img
-          className="Background"
-          src={landingPage}
-          alt="Landing Page"
-          width="100%"
-          height="100%"
-        />
-        <div className="HomeContent">
-          <Sidebar.Pushable>
-            <MySideBar
-              visible={this.state.visible}
-              handleSideBarHide={this.handleSideBarHide}
+      <>
+        <Zoom>
+          <div className="LandingPage">
+            <img
+              className="Background"
+              src={landingPage}
+              alt="Landing Page"
+              width="100%"
+              height="100%"
             />
-            <Sidebar.Pusher>
+            <div className="HomeContent">
+              <Fade>
+                <h2 className="UserName">Gnaneswar Gandu</h2>
+              </Fade>
               <Grid
                 stackable
                 className="GridContainer"
@@ -40,41 +48,53 @@ export class LandingPage extends React.Component {
                 columns={3}
                 textAlign="center"
               >
-                <Grid.Column floated="left" width={3}>
-                  <h2 className="UserName">Gnaneswar Gandu</h2>
-                </Grid.Column>
+                <Grid.Column width={3} />
                 <Grid.Column
                   textAlign="center"
                   verticalAlign="bottom"
                   width={10}
                 >
                   <section className="MainContent">
-                    Not Any Average Software Engineer
-                    <p>
-                      Get ready to turn your <i>ideas</i> into <i>reality</i>
-                    </p>
-                    <Icon
-                      className="DownIcon"
-                      size="tiny"
-                      circular
-                      name="angle down"
-                    />
+                    <Fade delay={1000} duration={1000}>
+                      Not Any
+                    </Fade>
+                    <Fade delay={1500} duration={1000}>
+                      Average
+                    </Fade>
+                    <Fade delay={2000} duration={1000}>
+                      Software
+                    </Fade>
+                    <Fade delay={2500} duration={1000}>
+                      Engineer
+                    </Fade>
+                    <Fade delay={3000} duration={1000}>
+                      <p>
+                        Get ready to turn your <i>ideas</i> into <i>reality</i>
+                      </p>
+                      {/* <Icon
+                        className="DownIcon"
+                        size="tiny"
+                        circular
+                        name="angle down"
+                      /> */}
+                      <Button className="DownButton">Get to Know Me</Button>
+                    </Fade>
                   </section>
                 </Grid.Column>
-                <Grid.Column floated="right" textAlign="right" width={3}>
-                  <Icon
-                    link
-                    onClick={this.handleSideBar}
-                    className="HomeMenu"
-                    name={this.state.visible ? "" : "sidebar"}
-                    size="big"
-                  />
-                </Grid.Column>
+                <Grid.Column width={3} />
               </Grid>
-            </Sidebar.Pusher>
-          </Sidebar.Pushable>
-        </div>
-      </div>
+              <Icon
+                link
+                onClick={this.toggleMenu}
+                className="HomeMenu"
+                name={menuActive ? "cancel" : "sidebar"}
+                size="big"
+              />
+            </div>
+            {menuActive && <Menu currentActive="home" className={menuClass} />}
+          </div>
+        </Zoom>
+      </>
     );
   }
 }
