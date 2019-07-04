@@ -1,0 +1,96 @@
+.AboutRow {
+  background-color: #4570e0;
+  padding: 0 !important;
+}
+
+.MenuIcon {
+  position: fixed;
+  z-index: 20;
+  top: 3%;
+  right: 1%;
+  color: white;
+}
+
+.AboutRow .AboutColumn {
+  height: 100%;
+}
+
+.AboutRow .AboutContent {
+  color: white;
+  font-family: "Libre Baskerville", serif;
+  margin-left: 70px;
+}
+
+.AboutRow .AboutContent .Heading {
+  font-size: 70px;
+  width: 500px;
+}
+
+.AboutRow .AboutContent .Content {
+  width: 600px;
+  font-size: 15px;
+  line-height: 27px;
+  text-align: justify;
+}
+
+.WorkAndEducation {
+  background-color: rgb(238, 237, 237);
+  font-family: "Libre Baskerville", serif;
+}
+
+.WorkAndEducation .Header {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 38px;
+  line-height: 42px;
+}
+
+.Skills {
+  font-family: "Libre Baskerville", serif;
+}
+
+.Skills .Header,
+.Projects .Header {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 38px;
+  line-height: 42px;
+  padding-bottom: 35px;
+}
+
+.Skills .SkillsColumn {
+  padding-bottom: 15px;
+}
+
+.Motto {
+  background-color: white;
+  padding: 0 !important;
+}
+
+.Motto .Item:hover {
+  background-color: #f9f9f9;
+}
+
+.Motto .Item .ItemBody {
+  padding-left: 120px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-right: 120px;
+}
+
+.Motto .Item .ItemBody .ItemHeader {
+  font-size: 38px;
+  line-height: 42px;
+}
+
+.Motto .Item .ItemBody .ItemContent {
+  font-size: 15px;
+  line-height: 27px;
+  font-family: "Libre Baskerville", serif;
+  color: #676767;
+}
+
+.Projects {
+  background-color: rgb(238, 237, 237);
+  width: 100%;
+}

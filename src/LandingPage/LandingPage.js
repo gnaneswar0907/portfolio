@@ -1,65 +1,100 @@
 import React from "react";
 
-import { Container, Image, Modal, Button, Icon, Grid } from "semantic-ui-react";
+import { Icon, Grid, Button } from "semantic-ui-react";
 
-import landingPage from "./landingpage.jpg";
+import Fade from "react-reveal/Fade";
+import Zoom from "react-reveal/Zoom";
 
 import "./LandingPage.css";
+import landingPage from "./landingpage.jpg";
+import Menu from "../Menu";
 
 export class LandingPage extends React.Component {
+  state = { menuActive: false, menuClass: "" };
+
+  toggleMenu = () => {
+    const { menuActive, menuClass } = this.state;
+    const newMenuClass = menuClass === "Menu" ? "MenuReverse" : "Menu";
+    if (menuActive) {
+      this.setState({ menuClass: newMenuClass }, () => {
+        setTimeout(() => this.setState({ menuActive: !menuActive }), 1000);
+      });
+    } else {
+      this.setState({ menuActive: !menuActive, menuClass: newMenuClass });
+    }
+  };
+
   render() {
+    const { menuClass, menuActive } = this.state;
     return (
-      <div className="LandingPage">
-        <img
-          className="Background"
-          src={landingPage}
-          alt="Landing Page"
-          width="100%"
-          height="100%"
-        />
-        <div className="HomeContent">
-          {/* <h2 className="UserName">Gnaneswar Gandu</h2>
-          <Icon name="bars" size="big" className="HomeMenu" />
-          <section className="MainContent">
-            Not Your Average Software Engineer
-            <p>
-              Get ready to turn your <i>ideas</i> into <i>reality</i>
-            </p>
-            <span>
+      <>
+        <Zoom>
+          <div className="LandingPage">
+            <img
+              className="Background"
+              src={landingPage}
+              alt="Landing Page"
+              width="100%"
+              height="100%"
+            />
+            <div className="HomeContent">
+              <Fade>
+                <h2 className="UserName">Gnaneswar Gandu</h2>
+              </Fade>
+              <Grid
+                stackable
+                className="GridContainer"
+                padded
+                columns={3}
+                textAlign="center"
+              >
+                <Grid.Column width={3} />
+                <Grid.Column
+                  textAlign="center"
+                  verticalAlign="bottom"
+                  width={10}
+                >
+                  <section className="MainContent">
+                    <Fade delay={1000} duration={1000}>
+                      Not Any
+                    </Fade>
+                    <Fade delay={1500} duration={1000}>
+                      Average
+                    </Fade>
+                    <Fade delay={2000} duration={1000}>
+                      Software
+                    </Fade>
+                    <Fade delay={2500} duration={1000}>
+                      Engineer
+                    </Fade>
+                    <Fade delay={3000} duration={1000}>
+                      <p>
+                        Get ready to turn your <i>ideas</i> into <i>reality</i>
+                      </p>
+                      {/* <Icon
+                        className="DownIcon"
+                        size="tiny"
+                        circular
+                        name="angle down"
+                      /> */}
+                      <Button className="DownButton">Get to Know Me</Button>
+                    </Fade>
+                  </section>
+                </Grid.Column>
+                <Grid.Column width={3} />
+              </Grid>
               <Icon
-                className="DownIcon"
-                size="tiny"
-                circular
-                name="angle down"
+                link
+                onClick={this.toggleMenu}
+                className="HomeMenu"
+                name={menuActive ? "cancel" : "sidebar"}
+                size="big"
               />
-            </span>
-          </section> */}
-          <Grid className="GridContainer" padded columns={3} textAlign="center">
-            <Grid.Column floated="left" width={3}>
-              <h2 className="UserName">Gnaneswar Gandu</h2>
-            </Grid.Column>
-            <Grid.Column verticalAlign="bottom" width={10}>
-              <section className="MainContent">
-                Not Any Average Software Engineer
-                <p>
-                  Get ready to turn your <i>ideas</i> into <i>reality</i>
-                </p>
-                <span>
-                  <Icon
-                    className="DownIcon"
-                    size="tiny"
-                    circular
-                    name="angle down"
-                  />
-                </span>
-              </section>
-            </Grid.Column>
-            <Grid.Column floated="right" width={3}>
-              <Icon className="HomeMenu" name="bars" size="big" />
-            </Grid.Column>
-          </Grid>
-        </div>
-      </div>
+            </div>
+            {menuActive && <Menu currentActive="home" className={menuClass} />}
+          </div>
+        </Zoom>
+      </>
     );
   }
 }
