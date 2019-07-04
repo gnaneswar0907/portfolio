@@ -13,6 +13,7 @@ import "./About.css";
 import Menu from "../Menu";
 import WorkAndEducation from "../WorkAndEducation";
 import Skills from "../Skills";
+import Projects from "../Projects";
 
 export class About extends React.Component {
   state = { menuActive: false, menuClass: "" };
@@ -127,6 +128,16 @@ export class About extends React.Component {
             <Grid.Column width={4} />
             <Grid.Column className="SkillsColumn" width={8}>
               <Skills wide="2" />
+            </Grid.Column>
+            <Grid.Column width={4} />
+          </Grid.Row>
+          <Grid.Row className="Projects">
+            <Grid.Column width={16}>
+              <h2 className="Header">Few Things I worked on</h2>
+            </Grid.Column>
+            <Grid.Column width={4} />
+            <Grid.Column className="ProjectsColumn" width={8}>
+              <Projects />
             </Grid.Column>
             <Grid.Column width={4} />
           </Grid.Row>
