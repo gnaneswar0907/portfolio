@@ -1,0 +1,26 @@
+.Contact {
+  position: relative;
+}
+
+.Contact .ContactNav {
+  background-color: #4570e0;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  z-index: 100;
+}
+
+.Contact .Header {
+  position: fixed;
+  top: 1.5%;
+  left: 1%;
+  color: white;
+}
+
+.Contact .MenuIcon {
+  position: fixed;
+  top: 1.5%;
+  right: 1%;
+  color: white;
+}
