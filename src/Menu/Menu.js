@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import { List } from "semantic-ui-react";
 
+import Fade from "react-reveal/Fade";
+
 import "./Menu.css";
 import { IconList } from "../Footer";
 
@@ -26,7 +28,9 @@ export const Menu = ({ className, currentActive }) => {
           About
         </List.Item>
         <List.Item
-          as={Link}
+          as="a"
+          href="https://gnaneswarportfolio.s3.amazonaws.com/Gnaneswar_Resume.pdf"
+          target="_blank"
           className={
             currentActive === "resume" ? "MenuItem Active" : "MenuItem"
           }
@@ -44,7 +48,9 @@ export const Menu = ({ className, currentActive }) => {
         </List.Item>
       </List>
       <div className="BottomLinks">
-        <IconList />
+        <Fade delay={1000}>
+          <IconList />
+        </Fade>
       </div>
     </div>
   );

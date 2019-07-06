@@ -119,7 +119,7 @@
 .ContactRow .ContactColumn .Contact {
   color: #4570e0;
   /* background-color: #4570e0; */
-  font-size: 20px;
+  font-size: 35px;
   height: 100%;
   width: 100%;
   text-align: center;
@@ -137,7 +137,7 @@
 
 .ContactRow .Resume:hover,
 .ContactRow .Contact:hover {
-  font-size: 50px;
+  font-size: 55px;
   cursor: pointer;
   background-color: rgb(238, 237, 237);
 }

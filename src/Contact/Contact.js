@@ -4,12 +4,13 @@ import { Icon } from "semantic-ui-react";
 
 import { Link } from "react-router-dom";
 
+import Zoom from "react-reveal";
+
 import "./Contact.css";
 
 import Menu from "../Menu";
 import { ContactForm } from "./ContactForm";
 import { Location } from "./Location";
-import Footer from "../Footer";
 
 export const Contact = () => {
   const [menuActive, setMenuActive] = useState(false);
@@ -27,26 +28,28 @@ export const Contact = () => {
   };
 
   return (
-    <div className="Contact">
-      <div className="ContactNav">
-        <Link to="/">
-          <h2 className="Header">Gnaneswar Gandu</h2>
-        </Link>
-        <span className="MenuIcon">
-          <Icon
-            onClick={toggleMenu}
-            link
-            name={menuActive ? "cancel" : "sidebar"}
-            size="big"
-          />
-        </span>
-        {menuActive && <Menu className={menuClass} currentActive="contact" />}
+    <Zoom delay={500}>
+      <div className="Contact">
+        <div className="ContactNav">
+          <Link to="/">
+            <h2 className="Header">Gnaneswar Gandu</h2>
+          </Link>
+          <span className="MenuIcon">
+            <Icon
+              onClick={toggleMenu}
+              link
+              name={menuActive ? "cancel" : "sidebar"}
+              size="big"
+            />
+          </span>
+          {menuActive && <Menu className={menuClass} currentActive="contact" />}
+        </div>
+        <div style={{ paddingTop: "60px" }}>
+          <Location />
+          <ContactForm />
+          {/* <Footer /> */}
+        </div>
       </div>
-      <div style={{ paddingTop: "60px" }}>
-        <Location />
-        <ContactForm />
-        {/* <Footer /> */}
-      </div>
-    </div>
+    </Zoom>
   );
 };
