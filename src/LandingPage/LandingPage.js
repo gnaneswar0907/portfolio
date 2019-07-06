@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 import { Icon, Grid, Button } from "semantic-ui-react";
 
 import Fade from "react-reveal/Fade";
@@ -71,13 +73,10 @@ export class LandingPage extends React.Component {
                       <p>
                         Get ready to turn your <i>ideas</i> into <i>reality</i>
                       </p>
-                      {/* <Icon
-                        className="DownIcon"
-                        size="tiny"
-                        circular
-                        name="angle down"
-                      /> */}
-                      <Button className="DownButton">Get to Know Me</Button>
+
+                      <Link to="/about">
+                        <Button className="DownButton">Get to Know Me </Button>
+                      </Link>
                     </Fade>
                   </section>
                 </Grid.Column>

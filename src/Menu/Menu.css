@@ -63,3 +63,12 @@
 .MenuReverse .MenuList {
   visibility: hidden;
 }
+
+.Menu .BottomLinks,
+.MenuReverse .BottomLinks {
+  display: inline-flex;
+  bottom: 1%;
+  right: 5%;
+  position: fixed;
+  color: white !important;
+}

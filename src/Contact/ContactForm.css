@@ -1,0 +1,22 @@
+.ContactForm {
+  margin-top: 2%;
+  width: 100%;
+  position: relative;
+}
+
+.ContactForm .InputField {
+  width: 75%;
+  margin-left: 20% !important;
+  padding-right: 20% !important;
+}
+
+.ContactForm .SubmitButton {
+  background-color: #4570e0;
+  width: 100px;
+  border-radius: 50px;
+  height: 50px;
+  color: white;
+  margin-left: 20%;
+  margin-top: 2%;
+  font-weight: bold;
+}

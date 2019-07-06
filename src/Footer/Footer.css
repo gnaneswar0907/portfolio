@@ -1,0 +1,37 @@
+.Footer {
+  position: absolute;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+  background-color: black;
+}
+
+.Footer .Copyright {
+  width: 30%;
+  opacity: 0.6;
+  color: white;
+  margin-left: 10%;
+  padding-top: 1.2%;
+  padding-bottom: 1.2%;
+}
+
+.Footer .ExternalLinks {
+  float: right;
+  margin-right: 20%;
+  color: white;
+  padding-top: 1.2%;
+  padding-bottom: 1.2%;
+}
+
+.Footer .ExternalLinks .IconList {
+  display: inline-flex;
+}
+
+.Footer .ExternalLinks .IconList .IconClass {
+  opacity: 0.5;
+  background-color: white;
+}
+
+.Footer .ExternalLinks .IconList .IconClass:hover {
+  opacity: 1;
+}

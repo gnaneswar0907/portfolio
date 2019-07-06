@@ -58,14 +58,14 @@
 }
 
 .HomeContent .DownButton {
-  background-color: transparent;
-  color: white;
+  background-color: transparent !important;
+  color: white !important;
   cursor: pointer;
   font-size: 20px;
 }
 
 .HomeContent .DownButton:hover,
 .HomeContent .DownButton:visited {
-  background-color: #e0e1e2;
-  color: black;
+  background-color: #e0e1e2 !important;
+  color: black !important;
 }
