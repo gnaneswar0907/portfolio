@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { List } from "semantic-ui-react";
 
 import "./Menu.css";
+import { IconList } from "../Footer";
 
 export const Menu = ({ className, currentActive }) => {
   return (
@@ -34,6 +35,7 @@ export const Menu = ({ className, currentActive }) => {
         </List.Item>
         <List.Item
           as={Link}
+          to="/contact"
           className={
             currentActive === "contact" ? "MenuItem Active" : "MenuItem"
           }
@@ -41,6 +43,9 @@ export const Menu = ({ className, currentActive }) => {
           Contact
         </List.Item>
       </List>
+      <div className="BottomLinks">
+        <IconList />
+      </div>
     </div>
   );
 };

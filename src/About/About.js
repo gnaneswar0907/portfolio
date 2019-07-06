@@ -1,7 +1,7 @@
 import React from "react";
 
 import about from "./about.jpeg";
-import { Grid, Image, Icon } from "semantic-ui-react";
+import { Grid, Image, Icon, Button } from "semantic-ui-react";
 
 import {
   disableBodyScroll,
@@ -14,12 +14,18 @@ import Menu from "../Menu";
 import WorkAndEducation from "../WorkAndEducation";
 import Skills from "../Skills";
 import Projects from "../Projects";
+import Footer from "../Footer";
 
 export class About extends React.Component {
-  state = { menuActive: false, menuClass: "" };
+  state = { menuActive: false, menuClass: "", backToTop: false };
 
   componentDidMount() {
     clearAllBodyScrollLocks(this.bodyRef);
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
   }
 
   toggleMenu = () => {
@@ -38,11 +44,29 @@ export class About extends React.Component {
 
   closeMenu = () => this.setState({ menuActive: false });
 
+  handleScroll = e => {
+    const scrollTop = e.currentTarget.scrollY;
+    scrollTop > 600
+      ? this.setState({ backToTop: true })
+      : this.setState({ backToTop: false });
+  };
+
+  scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   render() {
-    const { menuActive, menuClass } = this.state;
+    const { menuActive, menuClass, backToTop } = this.state;
     return (
-      <div ref={node => (this.bodyRef = node)} style={{ position: "relative" }}>
-        <Grid stackable style={{ position: "relative" }} verticalAlign="middle">
+      <div
+        onScroll={this.handleScroll}
+        ref={node => (this.bodyRef = node)}
+        style={{ position: "relative", height: "100%" }}
+      >
+        <Grid stackable verticalAlign="middle">
           <Grid.Row className="AboutRow">
             <Grid.Column width={8}>
               <Image fluid src={about} />
@@ -141,6 +165,17 @@ export class About extends React.Component {
             </Grid.Column>
             <Grid.Column width={4} />
           </Grid.Row>
+          <Grid.Row className="ContactRow">
+            <Grid.Column className="ResumeColumn" width={8}>
+              <div className="Resume">My Resume</div>
+            </Grid.Column>
+            <Grid.Column className="ContactColumn" width={8}>
+              <div className="Contact">Contact Me !</div>
+            </Grid.Column>
+            <Grid.Column width={16}>
+              <Footer />
+            </Grid.Column>
+          </Grid.Row>
         </Grid>
         <span className="MenuIcon">
           <Icon
@@ -150,6 +185,15 @@ export class About extends React.Component {
             size="big"
           />
         </span>
+        {backToTop && (
+          <Button
+            className="BackToTop"
+            onClick={this.scrollToTop}
+            circular
+            icon="angle up"
+            size="large"
+          />
+        )}
         {menuActive && <Menu className={menuClass} currentActive="about" />}
       </div>
     );

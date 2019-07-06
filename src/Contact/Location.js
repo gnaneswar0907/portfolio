@@ -1,27 +1,11 @@
 import React, { useState } from "react";
 
-import ReactMapGL, { SVGOverlay } from "react-map-gl";
-
-import { LocationPin } from "./LocationPin";
-
-import MapGL, {
-  Marker,
-  Popup,
-  NavigationControl,
-  FullscreenControl
-} from "react-map-gl";
+import ReactMapGL, { Marker, Popup, NavigationControl } from "react-map-gl";
 
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 
 const key =
   "pk.eyJ1Ijoia2F3YWFraSIsImEiOiJjanhvNno2YmgwM3c1M2pxdXc3c3VyOGN3In0.3uf9seRkB3z_MZMEP7Nrpg";
-
-const fullscreenControlStyle = {
-  position: "absolute",
-  top: 0,
-  left: 0,
-  padding: "10px"
-};
 
 const navStyle = {
   position: "absolute",
@@ -43,9 +27,10 @@ export const Location = () => {
   const [popupInfo, togglePopup] = useState(null);
 
   return (
-    <div>
+    <>
       <ReactMapGL
         {...viewport}
+        width="100%"
         mapboxApiAccessToken={key}
         onViewportChange={viewport => setViewport(viewport)}
       >
@@ -76,6 +61,6 @@ export const Location = () => {
           <NavigationControl />
         </div>
       </ReactMapGL>
-    </div>
+    </>
   );
 };

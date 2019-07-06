@@ -9,6 +9,7 @@ import "./Contact.css";
 import Menu from "../Menu";
 import { ContactForm } from "./ContactForm";
 import { Location } from "./Location";
+import Footer from "../Footer";
 
 export const Contact = () => {
   const [menuActive, setMenuActive] = useState(false);
@@ -41,9 +42,10 @@ export const Contact = () => {
         </span>
         {menuActive && <Menu className={menuClass} currentActive="contact" />}
       </div>
-      <div style={{ marginTop: "3.5%" }}>
+      <div style={{ paddingTop: "60px" }}>
         <Location />
         <ContactForm />
+        {/* <Footer /> */}
       </div>
     </div>
   );
