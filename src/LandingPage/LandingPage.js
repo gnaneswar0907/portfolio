@@ -73,15 +73,10 @@ export class LandingPage extends React.Component {
                       <p>
                         Get ready to turn your <i>ideas</i> into <i>reality</i>
                       </p>
-                      <Button className="DownButton">
-                        <Link
-                          className="DownButton"
-                          style={{ color: "white" }}
-                          to="/about"
-                        >
-                          Get to Know Me
-                        </Link>
-                      </Button>
+
+                      <Link to="/about">
+                        <Button className="DownButton">Get to Know Me </Button>
+                      </Link>
                     </Fade>
                   </section>
                 </Grid.Column>
