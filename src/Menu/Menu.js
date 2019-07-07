@@ -29,7 +29,7 @@ export const Menu = ({ className, currentActive }) => {
         </List.Item>
         <List.Item
           as="a"
-          href="https://gnaneswarportfolio.s3.amazonaws.com/Gnaneswar_Resume.pdf"
+          href="https://s3.amazonaws.com/gnaneswarg.com/Gnaneswar_Resume.pdf"
           target="_blank"
           className={
             currentActive === "resume" ? "MenuItem Active" : "MenuItem"
