@@ -179,7 +179,7 @@ export class About extends React.Component {
                 <div
                   onClick={() =>
                     window.open(
-                      "https://gnaneswarportfolio.s3.amazonaws.com/Gnaneswar_Resume.pdf",
+                      "https://s3.amazonaws.com/gnaneswarg.com/Gnaneswar_Resume.pdf",
                       "_blank"
                     )
                   }

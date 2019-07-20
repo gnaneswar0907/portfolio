@@ -17,7 +17,7 @@ const navStyle = {
 export const Location = () => {
   const [viewport, setViewport] = useState({
     width: "100%",
-    height: 250,
+    height: "100%",
     latitude: 33.0020416,
     longitude: -96.7777966,
     mapStyle: "mapbox://styles/mapbox/streets-v11",

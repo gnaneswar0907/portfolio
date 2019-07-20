@@ -11,10 +11,13 @@ import "./Contact.css";
 import Menu from "../Menu";
 import { ContactForm } from "./ContactForm";
 import { Location } from "./Location";
+import Footer from "../Footer";
 
 export const Contact = () => {
   const [menuActive, setMenuActive] = useState(false);
   const [menuClass, setMenuClass] = useState("");
+  const [locClass, setLocClass] = useState("Location");
+  const [footerClass, setFooterClass] = useState("ContactFooter");
 
   const toggleMenu = () => {
     const newMenuClass = menuClass === "Menu" ? "MenuReverse" : "Menu";
@@ -27,8 +30,18 @@ export const Contact = () => {
     }
   };
 
+  const shiftLoacation = where => {
+    if (where === "up") {
+      setLocClass("LocationUp");
+      setFooterClass("HideFooter");
+    } else {
+      setLocClass("Location");
+      setFooterClass("ContactFooter");
+    }
+  };
+
   return (
-    <Zoom delay={500}>
+    <Zoom>
       <div className="Contact">
         <div className="ContactNav">
           <Link to="/">
@@ -44,10 +57,17 @@ export const Contact = () => {
           </span>
           {menuActive && <Menu className={menuClass} currentActive="contact" />}
         </div>
-        <div style={{ paddingTop: "60px" }}>
+        <div className={locClass}>
           <Location />
-          <ContactForm />
-          {/* <Footer /> */}
+        </div>
+
+        <div className="Form">
+          <ContactForm shiftLoacation={shiftLoacation} />
+        </div>
+        {/* <ContactForm /> */}
+
+        <div className={footerClass}>
+          <Footer />
         </div>
       </div>
     </Zoom>

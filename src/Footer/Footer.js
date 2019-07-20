@@ -29,10 +29,10 @@ export const IconList = () => {
 export const Footer = () => {
   return (
     <div className="Footer">
+      <p className="Copyright"> {"\u00A9"}2019 Gnaneswar Gandu</p>
       <div className="ExternalLinks">
         <IconList />
       </div>
-      <p className="Copyright"> {"\u00A9"}2019 Gnaneswar Gandu</p>
     </div>
   );
 };
