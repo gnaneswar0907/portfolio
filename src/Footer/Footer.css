@@ -1,26 +1,28 @@
 .Footer {
-  position: absolute;
-  bottom: 0;
-  height: 70px;
   width: 100%;
   background-color: black;
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 2%;
+  align-content: center;
 }
 
 .Footer .Copyright {
-  width: 30%;
   opacity: 0.6;
   color: white;
-  margin-left: 10%;
-  padding-top: 1.2%;
-  padding-bottom: 1.2%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 .Footer .ExternalLinks {
-  float: right;
-  margin-right: 20%;
   color: white;
-  padding-top: 1.2%;
-  padding-bottom: 1.2%;
+  margin: 0;
+  padding-right: 20%;
+  text-align: end;
+  width: 100%;
 }
 
 .Footer .ExternalLinks .IconList {
@@ -34,4 +36,47 @@
 
 .Footer .ExternalLinks .IconList .IconClass:hover {
   opacity: 1;
+}
+
+@media only screen and (max-width: 820px) {
+  .Footer {
+    width: 100%;
+    background-color: black;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 2%;
+    align-content: center;
+  }
+
+  .Footer .Copyright {
+    opacity: 0.6;
+    color: white;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .Footer .ExternalLinks {
+    color: white;
+    margin: 0;
+    padding: 0;
+    align-content: flex-end;
+    width: 100%;
+    padding-right: 20%;
+  }
+
+  .Footer .ExternalLinks .IconList {
+    display: inline-flex;
+  }
+
+  .Footer .ExternalLinks .IconList .IconClass {
+    opacity: 0.5;
+    background-color: white;
+  }
+
+  .Footer .ExternalLinks .IconList .IconClass:hover {
+    opacity: 1;
+  }
 }

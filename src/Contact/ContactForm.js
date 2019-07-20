@@ -8,7 +8,6 @@ import CloseIcon from "@material-ui/icons/Close";
 import axios from "axios";
 
 import "./ContactForm.css";
-import Footer from "../Footer";
 
 const useStyles = makeStyles(theme => ({
   close: {
@@ -16,7 +15,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export const ContactForm = () => {
+export const ContactForm = ({ shiftLoacation }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -69,83 +68,102 @@ export const ContactForm = () => {
   const classes = useStyles();
 
   return (
-    <div style={{ paddingBottom: "100px", position: "relative" }}>
-      <form className="ContactForm" onSubmit={handleSubmit}>
-        <TextField
-          className="InputField"
-          onBlur={() => checkValid("name")}
-          error={errors.name}
-          label="Name"
-          margin="normal"
-          variant="outlined"
-          value={name}
-          onChange={e => setName(e.target.value)}
-          required
+    <form className="ContactForm" onSubmit={handleSubmit}>
+      <TextField
+        className="InputField"
+        onBlur={() => checkValid("name")}
+        error={errors.name}
+        onFocus={() => shiftLoacation("up")}
+        onBlur={() => shiftLoacation("down")}
+        label="Name"
+        margin="normal"
+        variant="outlined"
+        value={name}
+        onChange={e => setName(e.target.value)}
+        InputProps={{
+          className: "InputL"
+        }}
+        required
+      />
+      <TextField
+        onFocus={() => shiftLoacation("up")}
+        onBlur={() => shiftLoacation("down")}
+        className="InputField"
+        error={errors.email}
+        onBlur={() => checkValid("email")}
+        label="Email"
+        type="email"
+        margin="normal"
+        variant="outlined"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+        InputProps={{
+          className: "InputL"
+        }}
+        required
+      />
+      <TextField
+        onFocus={() => shiftLoacation("up")}
+        onBlur={() => shiftLoacation("down")}
+        className="InputField"
+        label="Subject"
+        margin="normal"
+        variant="outlined"
+        value={subject}
+        onChange={e => setSubject(e.target.value)}
+        InputProps={{
+          className: "InputL"
+        }}
+      />
+      <TextField
+        onFocus={() => shiftLoacation("up")}
+        onBlur={() => shiftLoacation("down")}
+        className="InputField"
+        rows={8}
+        label="Message"
+        margin="normal"
+        variant="outlined"
+        multiline
+        value={message}
+        onChange={e => setMessage(e.target.value)}
+        InputProps={{
+          className: "InputML"
+        }}
+      />
+
+      <button type="submit" className="SubmitButton">
+        SEND
+      </button>
+
+      {messageSent && (
+        <Snackbar
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "center"
+          }}
+          open={messageSent}
+          autoHideDuration={3000}
+          onClose={() => toggleMesaageSent(false)}
+          ContentProps={{
+            "aria-describedby": "message-id",
+            style: {
+              backgroundColor: "#4BB543"
+            }
+          }}
+          message={<span id="message-id">Message Sent</span>}
+          action={[
+            <IconButton
+              key="close"
+              aria-label="Close"
+              color="inherit"
+              className={classes.close}
+              onClick={() => toggleMesaageSent(false)}
+            >
+              <CloseIcon />
+            </IconButton>
+          ]}
         />
-        <TextField
-          className="InputField"
-          error={errors.email}
-          onBlur={() => checkValid("email")}
-          label="Email"
-          type="email"
-          margin="normal"
-          variant="outlined"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          required
-        />
-        <TextField
-          className="InputField"
-          label="Subject"
-          margin="normal"
-          variant="outlined"
-          value={subject}
-          onChange={e => setSubject(e.target.value)}
-        />
-        <TextField
-          className="InputField"
-          rows={10}
-          label="Message"
-          margin="normal"
-          variant="outlined"
-          multiline
-          value={message}
-          onChange={e => setMessage(e.target.value)}
-        />
-        <button type="submit" className="SubmitButton">
-          SEND
-        </button>
-        {messageSent && (
-          <Snackbar
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "center"
-            }}
-            open={messageSent}
-            autoHideDuration={3000}
-            onClose={() => toggleMesaageSent(false)}
-            ContentProps={{
-              "aria-describedby": "message-id",
-              style: {
-                backgroundColor: "#4BB543"
-              }
-            }}
-            message={<span id="message-id">Message Sent</span>}
-            action={[
-              <IconButton
-                key="close"
-                aria-label="Close"
-                color="inherit"
-                className={classes.close}
-                onClick={() => toggleMesaageSent(false)}
-              >
-                <CloseIcon />
-              </IconButton>
-            ]}
-          />
-        )}
-      </form>
-      <Footer />
-    </div>
+      )}
+    </form>
   );
 };
