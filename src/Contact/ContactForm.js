@@ -50,6 +50,7 @@ export const ContactForm = ({ shiftLoacation }) => {
   };
 
   const checkValid = property => {
+    shiftLoacation("down");
     if (property === "name") {
       if (name === "") {
         setErrors({ ...errors, name: true });
@@ -74,7 +75,6 @@ export const ContactForm = ({ shiftLoacation }) => {
         onBlur={() => checkValid("name")}
         error={errors.name}
         onFocus={() => shiftLoacation("up")}
-        onBlur={() => shiftLoacation("down")}
         label="Name"
         margin="normal"
         variant="outlined"
@@ -87,7 +87,6 @@ export const ContactForm = ({ shiftLoacation }) => {
       />
       <TextField
         onFocus={() => shiftLoacation("up")}
-        onBlur={() => shiftLoacation("down")}
         className="InputField"
         error={errors.email}
         onBlur={() => checkValid("email")}

@@ -11,6 +11,7 @@ import spring from "./images/spring.png";
 import crm from "./images/crm.png";
 import mongo from "./images/mongo.png";
 import sql from "./images/sql.svg";
+import net from "./images/net.png";
 
 const languages = [
   {
@@ -50,6 +51,11 @@ const frameworks = [
     image: crm,
     description: "Intermediate",
     extras: ["Certified Developer"]
+  },
+  {
+    image: net,
+    description: "Experienced",
+    extras: ["C#", "ASP.NET", "LINQ"]
   }
 ];
 
@@ -64,45 +70,47 @@ const database = [
   }
 ];
 
-export const Skills = ({ wide }) => {
+export const Languages = () => {
   return (
-    <>
-      {wide === "4" ? (
-        <div className="Skills">
-          {languages.map(({ image, description, extras }, index) => (
-            <Skill key={index} index={index} image={image}>
-              <h2 style={{ marginTop: "25%" }}>{description}</h2>
-              {extras
-                ? extras.map((extra, index) => <p key={index}>{extra}</p>)
-                : ""}
-            </Skill>
-          ))}
-        </div>
-      ) : wide === "3" ? (
-        <div className="Skills">
-          {frameworks.map(({ image, description, extras }, index) => (
-            <Skill key={index} index={index} image={image}>
-              <h2 style={{ marginTop: "25%" }}>{description}</h2>
-              {extras
-                ? extras.map((extra, index) => <p key={index}>{extra}</p>)
-                : ""}
-            </Skill>
-          ))}
-        </div>
-      ) : wide === "2" ? (
-        <div className="Skills">
-          {database.map(({ image, description, extras }, index) => (
-            <Skill key={index} index={index} image={image}>
-              <h2 style={{ marginTop: "40%" }}>{description}</h2>
-              {extras
-                ? extras.map((extra, index) => <p key={index}>{extra}</p>)
-                : ""}
-            </Skill>
-          ))}
-        </div>
-      ) : (
-        ""
-      )}
-    </>
+    <div className="SeperateSkills">
+      {languages.map(({ image, description, extras }, index) => (
+        <Skill key={index} index={index} image={image}>
+          <h2 style={{ marginTop: "25%" }}>{description}</h2>
+          {extras
+            ? extras.map((extra, index) => <p key={index}>{extra}</p>)
+            : ""}
+        </Skill>
+      ))}
+    </div>
+  );
+};
+
+export const Frameworks = () => {
+  return (
+    <div className="SeperateSkills">
+      {frameworks.map(({ image, description, extras }, index) => (
+        <Skill key={index} index={index} image={image}>
+          <h2 style={{ marginTop: "25%" }}>{description}</h2>
+          {extras
+            ? extras.map((extra, index) => <p key={index}>{extra}</p>)
+            : ""}
+        </Skill>
+      ))}
+    </div>
+  );
+};
+
+export const Database = () => {
+  return (
+    <div className="SeperateSkills">
+      {database.map(({ image, description, extras }, index) => (
+        <Skill key={index} index={index} image={image}>
+          <h2 style={{ marginTop: "40%" }}>{description}</h2>
+          {extras
+            ? extras.map((extra, index) => <p key={index}>{extra}</p>)
+            : ""}
+        </Skill>
+      ))}
+    </div>
   );
 };

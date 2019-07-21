@@ -1,6 +1,20 @@
-.Projects {
-  display: inline-flex;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+.SeperateProjects {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
+  padding-left: 23%;
+  padding-right: 26%;
+  grid-row-gap: 3%;
+  padding-bottom: 5%;
+}
+
+@media only screen and (max-width: 820px) {
+  .SeperateProjects {
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
+    padding-left: 2%;
+    padding-right: 2%;
+    grid-row-gap: 0;
+  }
 }

@@ -6,6 +6,8 @@ import library from "./images/library.jpg";
 import checkin from "./images/ml.jpg";
 import streams from "./images/livestream.jpg";
 
+import "./Projects.css";
+
 const projects = [
   {
     image: social,
@@ -40,7 +42,7 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <div className="Projects">
+    <div className="SeperateProjects">
       {projects.map(({ image, title, subtext, backtext }, index) => {
         return (
           <Project
