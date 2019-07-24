@@ -85,7 +85,7 @@
 .Projects {
   display: grid;
   grid-template-columns: 100%;
-  background-color: rgb(238, 237, 237);
+  background-color: white;
   width: 100%;
 }
 
@@ -247,7 +247,7 @@
   .Projects {
     display: grid;
     grid-template-columns: 100%;
-    background-color: rgb(238, 237, 237);
+    background-color: white;
     width: 100%;
   }
 

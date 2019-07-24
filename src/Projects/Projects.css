@@ -2,8 +2,8 @@
   display: grid;
   grid-template-columns: 50% 50%;
   justify-content: center;
-  padding-left: 23%;
-  padding-right: 26%;
+  padding-left: 17%;
+  padding-right: 17%;
   grid-row-gap: 3%;
   padding-bottom: 5%;
 }

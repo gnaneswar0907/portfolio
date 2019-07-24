@@ -2,11 +2,25 @@ import React from "react";
 
 import "./Project.css";
 
-import pin from "./images/pin.png";
+import { Image, Reveal, Label } from "semantic-ui-react";
 
-import { Image, Reveal } from "semantic-ui-react";
+export const Project = ({ image, title, backtext, index, chips }) => {
+  const renderPoints = () => {
+    return backtext.map((point, index) => {
+      return (
+        <li key={index}>
+          <p>{point}</p>
+        </li>
+      );
+    });
+  };
 
-export const Project = ({ image, title, subtext, backtext, index }) => {
+  const renderChips = () => {
+    return chips.map((chip, index) => {
+      return <Label key={index}>{chip}</Label>;
+    });
+  };
+
   return (
     <div className="Project">
       <Reveal animated={`move${index % 2 === 0 ? "" : " right"}`}>
@@ -14,15 +28,23 @@ export const Project = ({ image, title, subtext, backtext, index }) => {
           <Image src={image} className="Image" />
           <div className="Content">
             <h3 className="Header">{title}</h3>
-            <p className="SubContent">({subtext})</p>
+            {/* <p className="SubContent">({subtext})</p> */}
           </div>
         </Reveal.Content>
         <Reveal.Content
           className={index % 2 === 0 ? "BackCardBlue" : "BackCardRed"}
           hidden
         >
-          <Image spaced src={pin} size="tiny" />
-          <p className="Content">{backtext}</p>
+          <div className="Heading">
+            <p>{title}</p>
+          </div>
+          <div className="Content">
+            <ul style={{ paddingInlineStart: "10px" }}>{renderPoints()}</ul>
+            <hr />
+            <Label.Group className="Chips" circular>
+              {renderChips()}
+            </Label.Group>
+          </div>
         </Reveal.Content>
       </Reveal>
     </div>
