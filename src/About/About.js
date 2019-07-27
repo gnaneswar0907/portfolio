@@ -65,7 +65,7 @@ export class About extends React.Component {
   render() {
     const { menuActive, menuClass, backToTop } = this.state;
     return (
-      <Zoom>
+      <Zoom ssrFadeout>
         <div
           onScroll={this.handleScroll}
           ref={node => (this.bodyRef = node)}
