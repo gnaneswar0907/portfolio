@@ -1,10 +1,10 @@
 .Contact {
   position: relative;
   height: 100%;
+  overflow-y: auto;
 }
 
-.Contact .Location,
-.Contact .LocationUp {
+.Contact .Location {
   position: absolute;
   top: 6.5%;
   width: 100%;
@@ -48,6 +48,7 @@
   .Contact {
     position: relative;
     height: 100%;
+    overflow-y: auto;
   }
 
   .Contact .Location {
@@ -55,14 +56,7 @@
     top: 6.5%;
     width: 100%;
     height: 20%;
-  }
-
-  .Contact .LocationUp {
-    position: absolute;
-    top: 6.5%;
-    width: 100%;
-    height: 20%;
-    transform: translateY(-60%);
+    overflow-y: hidden;
   }
 
   .Contact .Form {

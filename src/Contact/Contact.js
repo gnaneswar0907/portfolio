@@ -16,7 +16,6 @@ import Footer from "../Footer";
 export const Contact = () => {
   const [menuActive, setMenuActive] = useState(false);
   const [menuClass, setMenuClass] = useState("");
-  const [locClass, setLocClass] = useState("Location");
   const [footerClass, setFooterClass] = useState("ContactFooter");
 
   const toggleMenu = () => {
@@ -32,10 +31,8 @@ export const Contact = () => {
 
   const shiftLoacation = where => {
     if (where === "up") {
-      setLocClass("LocationUp");
       setFooterClass("HideFooter");
     } else {
-      setLocClass("Location");
       setFooterClass("ContactFooter");
     }
   };
@@ -57,15 +54,12 @@ export const Contact = () => {
           </span>
           {menuActive && <Menu className={menuClass} currentActive="contact" />}
         </div>
-        <div className={locClass}>
+        <div className="Location">
           <Location />
         </div>
-
         <div className="Form">
           <ContactForm shiftLoacation={shiftLoacation} />
         </div>
-        {/* <ContactForm /> */}
-
         <div className={footerClass}>
           <Footer />
         </div>
