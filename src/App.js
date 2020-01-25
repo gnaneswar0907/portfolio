@@ -10,8 +10,8 @@ const App = () => {
     <BrowserRouter basename="/portfolio">
       <Switch>
         <Route path="/" exact component={LandingPage} />
-        <Route path="/about" exact component={About} />
-        <Route path="/contact" exact component={Contact} />
+        <Route path="/portfolio/about" exact component={About} />
+        <Route path="/portfolio/contact" exact component={Contact} />
       </Switch>
     </BrowserRouter>
   );
