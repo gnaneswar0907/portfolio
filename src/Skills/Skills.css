@@ -1,6 +1,20 @@
-.Skills {
+.SeperateSkills {
   display: inline-flex;
+  flex-wrap: wrap;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 1.5%;
+}
+
+@media only screen and (max-width: 820px) {
+  .SeperateSkills {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+    padding-bottom: unset;
+    margin: unset;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
 }

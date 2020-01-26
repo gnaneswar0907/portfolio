@@ -1,3 +1,3 @@
-import { Skills } from "./Skills";
+import { Languages, Frameworks, Database } from "./Skills";
 
-export default Skills;
+export { Languages, Frameworks, Database };

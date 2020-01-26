@@ -1,6 +1,132 @@
 .AboutRow {
+  display: grid;
+  grid-template-columns: 50% 50%;
   background-color: #4570e0;
-  padding: 0 !important;
+}
+
+.AboutRow img {
+  height: auto;
+}
+
+.AboutRow .AboutContent {
+  color: white;
+  font-family: "Libre Baskerville", serif;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 30%;
+  padding-bottom: 30%;
+}
+
+.AboutRow .AboutContent .Heading {
+  font-size: 450%;
+}
+
+.AboutRow .AboutContent .Content {
+  font-size: 120%;
+  line-height: 160%;
+  text-align: justify;
+}
+
+.Motto {
+  display: grid;
+  grid-template-columns: 33.3333% 33.3333% 33.3333%;
+  background-color: white;
+}
+
+.Motto .Item:hover {
+  background-color: #f9f9f9;
+}
+
+.Motto .Item .ItemBody {
+  padding-left: 20%;
+  padding-top: 13%;
+  padding-bottom: 13%;
+  padding-right: 20%;
+}
+
+.Motto .Item .ItemBody .ItemHeader {
+  font-size: 280%;
+}
+
+.Motto .Item .ItemBody .ItemContent {
+  font-size: 105%;
+  line-height: 150%;
+  font-family: "Libre Baskerville", serif;
+  color: #676767;
+}
+
+.WorkAndEducation {
+  display: grid;
+  grid-template-columns: 100%;
+  background-color: rgb(238, 237, 237);
+  font-family: "Libre Baskerville", serif;
+}
+
+.WorkAndEducation .Header {
+  text-align: center;
+  padding-top: 3%;
+  font-size: 270%;
+}
+
+.Skills {
+  display: grid;
+  grid-template-columns: 100%;
+  font-family: "Libre Baskerville", serif;
+}
+
+.Skills .Header,
+.Projects .Header {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 250%;
+  margin-bottom: 1.5rem;
+}
+
+.Projects {
+  display: grid;
+  grid-template-columns: 100%;
+  background-color: white;
+  width: 100%;
+}
+
+.ProjectsColumn {
+  margin-left: 5%;
+}
+
+.ContactRow {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.ContactRow .ResumeColumn .Resume,
+.ContactRow .ContactColumn .Contact {
+  color: white;
+  background-color: #4570e0;
+  font-size: 250%;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding-top: 20%;
+  padding-bottom: 15%;
+  transition: all 0.5s;
+}
+
+.ContactRow .ResumeColumn,
+.ContactRow .ContactColumn {
+  height: 100%;
+  width: 100%;
+}
+
+.ContactRow .Resume:hover,
+.ContactRow .Contact:hover {
+  font-size: 400%;
+  cursor: pointer;
+  background-color: rgb(238, 237, 237);
+  color: #4570e0;
+}
+
+.AboutFooter {
+  height: 7%;
 }
 
 .MenuIcon {
@@ -9,10 +135,12 @@
   top: 3%;
   right: 1%;
   color: white;
+  cursor: pointer;
 }
 
 .BackToTop {
   position: fixed;
+  cursor: pointer;
   z-index: 10;
   bottom: 2%;
   right: 1%;
@@ -24,120 +152,166 @@
   background-color: #4570e0 !important;
 }
 
-.AboutRow .AboutColumn {
-  height: 100%;
-}
+@media only screen and (max-width: 820px) {
+  .AboutRow {
+    display: grid;
+    grid-template-columns: 100%;
+    background-color: #4570e0;
+  }
 
-.AboutRow .AboutContent {
-  color: white;
-  font-family: "Libre Baskerville", serif;
-  margin-left: 70px;
-}
+  .AboutRow img {
+    height: unset;
+  }
 
-.AboutRow .AboutContent .Heading {
-  font-size: 70px;
-  width: 500px;
-}
+  .AboutRow .AboutContent {
+    color: white;
+    font-family: "Libre Baskerville", serif;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 15%;
+    padding-bottom: 15%;
+  }
 
-.AboutRow .AboutContent .Content {
-  width: 600px;
-  font-size: 15px;
-  line-height: 27px;
-  text-align: justify;
-}
+  .AboutRow .AboutContent .Heading {
+    font-size: 200%;
+  }
 
-.WorkAndEducation {
-  background-color: rgb(238, 237, 237);
-  font-family: "Libre Baskerville", serif;
-}
+  .AboutRow .AboutContent .Content {
+    font-size: 95%;
+    line-height: 120%;
+    text-align: unset;
+  }
 
-.WorkAndEducation .Header {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 38px;
-  line-height: 42px;
-}
+  .Motto {
+    display: grid;
+    grid-template-columns: 100%;
+    background-color: white;
+  }
 
-.Skills {
-  font-family: "Libre Baskerville", serif;
-}
+  .Motto .Item:hover {
+    background-color: #f9f9f9;
+  }
 
-.Skills .Header,
-.Projects .Header {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 38px;
-  line-height: 42px;
-  padding-bottom: 35px;
-}
+  .Motto .Item .ItemBody {
+    padding-left: 15%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    padding-right: 15%;
+  }
 
-.Skills .SkillsColumn {
-  padding-bottom: 15px;
-}
+  .Motto .Item .ItemBody .ItemHeader {
+    font-size: 230%;
+    margin-bottom: 0.5rem;
+  }
 
-.Motto {
-  background-color: white;
-  padding: 0 !important;
-}
+  .Motto .Item .ItemBody .ItemContent {
+    font-size: 95%;
+    line-height: 130%;
+    font-family: "Libre Baskerville", serif;
+    color: #676767;
+    text-align: justify;
+  }
 
-.Motto .Item:hover {
-  background-color: #f9f9f9;
-}
+  .WorkAndEducation {
+    display: grid;
+    grid-template-columns: 100%;
+    background-color: rgb(238, 237, 237);
+    font-family: "Libre Baskerville", serif;
+  }
 
-.Motto .Item .ItemBody {
-  padding-left: 120px;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  padding-right: 120px;
-}
+  .WorkAndEducation .Header {
+    text-align: center;
+    padding-top: 6%;
+    margin-bottom: 0.5rem;
+    font-size: 180%;
+  }
 
-.Motto .Item .ItemBody .ItemHeader {
-  font-size: 38px;
-  line-height: 42px;
-}
+  .Skills {
+    display: grid;
+    grid-template-columns: 100%;
+    font-family: "Libre Baskerville", serif;
+  }
 
-.Motto .Item .ItemBody .ItemContent {
-  font-size: 15px;
-  line-height: 27px;
-  font-family: "Libre Baskerville", serif;
-  color: #676767;
-}
+  .Skills .Header {
+    font-size: 250%;
+  }
 
-.Projects {
-  background-color: rgb(238, 237, 237);
-  width: 100%;
-  padding-bottom: 2.5% !important;
-}
+  .Skills .Header,
+  .Projects .Header {
+    text-align: center;
+    padding-top: 3%;
 
-.ContactRow {
-  width: 100%;
-  height: 400px;
-  padding: 0 !important;
-}
+    padding-bottom: 1.5%;
+  }
 
-.ContactRow .ResumeColumn .Resume,
-.ContactRow .ContactColumn .Contact {
-  color: #4570e0;
-  /* background-color: #4570e0; */
-  font-size: 35px;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  padding-top: 20% !important;
-  padding-bottom: 15% !important;
-  transition: all 0.5s;
-}
+  .Projects .Header {
+    font-size: 230%;
+  }
 
-.ContactRow .ResumeColumn,
-.ContactRow .ContactColumn {
-  height: 100%;
-  width: 100%;
-  padding: 0 !important;
-}
+  .Projects {
+    display: grid;
+    grid-template-columns: 100%;
+    background-color: white;
+    width: 100%;
+  }
 
-.ContactRow .Resume:hover,
-.ContactRow .Contact:hover {
-  font-size: 55px;
-  cursor: pointer;
-  background-color: rgb(238, 237, 237);
+  .ContactRow {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-row-gap: 1.5%;
+  }
+
+  .ContactRow .ResumeColumn .Resume,
+  .ContactRow .ContactColumn .Contact {
+    color: white;
+    background-color: #4570e0;
+    font-size: 250%;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding-top: 20%;
+    padding-bottom: 15%;
+    transition: all 0.5s;
+  }
+
+  .ContactRow .ResumeColumn,
+  .ContactRow .ContactColumn {
+    height: 100%;
+    width: 100%;
+  }
+
+  .ContactRow .Resume:hover,
+  .ContactRow .Contact:hover {
+    font-size: 400%;
+    cursor: pointer;
+    background-color: rgb(238, 237, 237);
+    color: #4570e0;
+  }
+
+  .AboutFooter {
+    margin-top: 1rem;
+    height: 7%;
+  }
+
+  .MenuIcon {
+    position: fixed;
+    z-index: 20;
+    top: 2%;
+    right: 1.5%;
+    color: white;
+    font-size: 70% !important;
+  }
+
+  .BackToTop {
+    position: fixed;
+    z-index: 10;
+    bottom: 2%;
+    right: 1%;
+    color: white !important;
+    background-color: rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .BackToTop:hover {
+    background-color: #4570e0 !important;
+  }
 }

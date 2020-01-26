@@ -2,29 +2,47 @@ import React from "react";
 
 import "./Project.css";
 
-import pin from "./images/pin.png";
+export const Project = ({ image, title, backtext, index, chips }) => {
+  const renderPoints = () => {
+    return backtext.map((point, index) => {
+      return (
+        <li key={index}>
+          <p>{point}</p>
+        </li>
+      );
+    });
+  };
 
-import { Image, Reveal } from "semantic-ui-react";
+  const renderChips = () => {
+    return chips.map((chip, index) => {
+      return (
+        <div key={index} className="Chip">
+          {chip}
+        </div>
+      );
+    });
+  };
 
-export const Project = ({ image, title, subtext, backtext, index }) => {
   return (
-    <div className="Project">
-      <Reveal animated={`move${index % 2 === 0 ? "" : " right"}`}>
-        <Reveal.Content className="FrontCard" visible>
-          <Image src={image} className="Image" />
+    <div style={{ padding: "6%" }}>
+      <div className="Project">
+        <div className={index % 2 === 0 ? "LeftFrontCard" : "RightFrontCard"}>
+          <img alt="Project" src={image} />
           <div className="Content">
             <h3 className="Header">{title}</h3>
-            <p className="SubContent">({subtext})</p>
           </div>
-        </Reveal.Content>
-        <Reveal.Content
-          className={index % 2 === 0 ? "BackCardBlue" : "BackCardRed"}
-          hidden
-        >
-          <Image spaced src={pin} size="tiny" />
-          <p className="Content">{backtext}</p>
-        </Reveal.Content>
-      </Reveal>
+        </div>
+        <div className={index % 2 === 0 ? "BlueBackCard" : "RedBackCard"}>
+          <div className="Heading">
+            <p>{title}</p>
+          </div>
+          <div className="Content">
+            <ul>{renderPoints()}</ul>
+            <hr />
+          </div>
+          <div className="Chips">{renderChips()}</div>
+        </div>
+      </div>
     </div>
   );
 };
