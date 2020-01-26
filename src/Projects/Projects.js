@@ -5,6 +5,8 @@ import social from "./images/social_media.jpg";
 import library from "./images/library.jpg";
 import checkin from "./images/ml.jpg";
 import streams from "./images/livestream.jpg";
+import search from "./images/search.png";
+import editor from "./images/editor.png";
 
 import "./Projects.css";
 
@@ -46,6 +48,25 @@ const projects = [
     backtext: [
       `Implemented a live video streaming application similar to twitch live streaming website.`,
       `The basic CRUD features were implemented using ReactJS.`
+    ]
+  },
+  {
+    image: search,
+    title: "Multi Dimensional Search",
+    chips: ["JAVA", "RBT", "HashMap"],
+    backtext: [
+      `Implementation of MDS for a website seller (like Amazon), 
+    having thousands of Products (each with its own ID, Price, Description). `,
+      `Organizing data into a TreeMap (Red-Black Tree), used HashMap, and HashSet to achieve insertion, 
+    deletion, search, modification efficiently.`
+    ]
+  },
+  {
+    image: editor,
+    title: "Rich Text Editor",
+    chips: ["ReactJS", "slatejs"],
+    backtext: [
+      `Developed a React based rich text editor(RTE) making use of slatejs package which supports various operations`
     ]
   }
 ];

@@ -29,3 +29,6 @@ app.post("/api/sendMail", (req, res) => {
     .then(() => res.send("Success"))
     .catch(error => res.send(error));
 });
+app.get("/", (req, res) => {
+  res.send({ ee: "eee" });
+});

@@ -39,7 +39,7 @@ export const ContactForm = ({ shiftLoacation }) => {
       message
     };
     axios
-      .post("http://localhost:4444/api/sendMail", formData)
+      .post("https://gnaneswar-portfolio.herokuapp.com/api/sendMail", formData)
       .then(res => {
         clearFormValues();
         toggleMesaageSent(true);

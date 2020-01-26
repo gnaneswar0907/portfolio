@@ -89,6 +89,10 @@
   width: 100%;
 }
 
+.ProjectsColumn {
+  margin-left: 5%;
+}
+
 .ContactRow {
   display: grid;
   grid-template-columns: 50% 50%;
