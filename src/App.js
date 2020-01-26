@@ -7,7 +7,7 @@ import Contact from "./Contact";
 
 const App = () => {
   return (
-    <BrowserRouter baseName="/portfolio">
+    <BrowserRouter basename="/portfolio">
       <Switch>
         <Route path="/" exact component={LandingPage} />
         <Route path="/about" exact component={About} />
