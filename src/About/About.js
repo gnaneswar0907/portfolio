@@ -150,7 +150,7 @@ export class About extends React.Component {
               <div
                 onClick={() =>
                   window.open(
-                    "https://s3.amazonaws.com/gnaneswarg.com/Gnaneswar_Resume.pdf",
+                    "https://gnaneswar-resume.s3.us-east-2.amazonaws.com/Gnaneswar_Resume.pdf",
                     "_blank"
                   )
                 }
