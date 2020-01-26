@@ -58,7 +58,7 @@ export class LandingPage extends React.Component {
               </p>
               <div className="DownButtonLabel">
                 <p className="LabelContent">Get to know me</p>
-                <IconButton href="/about" className="DownButton">
+                <IconButton href="/portfolio/about" className="DownButton">
                   <ChevronRightIcon fontWeight="bold" />
                 </IconButton>
               </div>
