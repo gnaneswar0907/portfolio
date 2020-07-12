@@ -20,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "clean": "rm -rf node_modules build/ yarn.lock"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,6 +42,7 @@
   "devDependencies": {
     "@craco/craco": "^5.2.1",
     "craco-less": "^1.9.0",
+    "gh-pages": "^3.1.0",
     "semantic-ui-less": "^2.4.1"
   }
 }
