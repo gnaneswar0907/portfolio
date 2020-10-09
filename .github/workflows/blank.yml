@@ -1,0 +1,24 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: install
+      run: npm install
+    - name: build
+      run: npm run build
+    - name: deploy
+      uses: demurgos/ga-deploy-git@v1
+      with:
+        accessToken: ${{ secrets.access_token }}
+        srcDir: build
+        destBranch: gh-pages
