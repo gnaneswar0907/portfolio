@@ -1,74 +1,74 @@
-import React from "react";
+import React from "react"
 
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
-import about from "./about.jpeg";
-import { Icon, Button } from "semantic-ui-react";
+import about from "./about.jpeg"
+import { Icon, Button } from "semantic-ui-react"
 
-import Zoom from "react-reveal/Zoom";
+import Zoom from "react-reveal/Zoom"
 
 import {
   disableBodyScroll,
   enableBodyScroll,
-  clearAllBodyScrollLocks
-} from "body-scroll-lock";
+  clearAllBodyScrollLocks,
+} from "body-scroll-lock"
 
-import "./About.css";
-import Menu from "../Menu";
-import WorkAndEducation from "../WorkAndEducation";
-import { Languages, Frameworks, Database } from "../Skills";
-import Projects from "../Projects";
-import Footer from "../Footer";
+import "./About.css"
+import Menu from "../Menu"
+import WorkAndEducation from "../WorkAndEducation"
+import { Languages, Frameworks, Database } from "../Skills"
+import Projects from "../Projects"
+import Footer from "../Footer"
 
 export class About extends React.Component {
-  state = { menuActive: false, menuClass: "", backToTop: false };
+  state = { menuActive: false, menuClass: "", backToTop: false }
 
   componentDidMount() {
-    clearAllBodyScrollLocks(this.bodyRef);
-    window.addEventListener("scroll", this.handleScroll);
+    clearAllBodyScrollLocks(this.bodyRef)
+    window.addEventListener("scroll", this.handleScroll)
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll)
   }
 
   toggleMenu = () => {
-    const { menuActive, menuClass } = this.state;
-    const newMenuClass = menuClass === "Menu" ? "MenuReverse" : "Menu";
+    const { menuActive, menuClass } = this.state
+    const newMenuClass = menuClass === "Menu" ? "MenuReverse" : "Menu"
     if (menuActive) {
-      enableBodyScroll(this.bodyRef);
+      enableBodyScroll(this.bodyRef)
       this.setState({ menuClass: newMenuClass }, () => {
-        setTimeout(() => this.setState({ menuActive: !menuActive }), 1000);
-      });
+        setTimeout(() => this.setState({ menuActive: !menuActive }), 1000)
+      })
     } else {
-      disableBodyScroll(this.bodyRef);
-      this.setState({ menuActive: !menuActive, menuClass: newMenuClass });
+      disableBodyScroll(this.bodyRef)
+      this.setState({ menuActive: !menuActive, menuClass: newMenuClass })
     }
-  };
+  }
 
-  closeMenu = () => this.setState({ menuActive: false });
+  closeMenu = () => this.setState({ menuActive: false })
 
-  handleScroll = e => {
-    const scrollTop = e.currentTarget.scrollY;
+  handleScroll = (e) => {
+    const scrollTop = e.currentTarget.scrollY
     scrollTop > 600
       ? this.setState({ backToTop: true })
-      : this.setState({ backToTop: false });
-  };
+      : this.setState({ backToTop: false })
+  }
 
   scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
-    });
-  };
+      behavior: "smooth",
+    })
+  }
 
   render() {
-    const { menuActive, menuClass, backToTop } = this.state;
+    const { menuActive, menuClass, backToTop } = this.state
     return (
       <Zoom ssrFadeout>
         <div
           onScroll={this.handleScroll}
-          ref={node => (this.bodyRef = node)}
+          ref={(node) => (this.bodyRef = node)}
           style={{ position: "relative", height: "100%" }}
         >
           <div className="AboutRow">
@@ -150,7 +150,7 @@ export class About extends React.Component {
               <div
                 onClick={() =>
                   window.open(
-                    "https://gnaneswar-resume.s3.us-east-2.amazonaws.com/Gnaneswar_Resume.pdf",
+                    "https://drive.google.com/file/d/1YNFrKDkh6-3LZ6IBKm025OLLiSnOZ8jv/view?usp=sharing",
                     "_blank"
                   )
                 }
@@ -188,6 +188,6 @@ export class About extends React.Component {
           {menuActive && <Menu className={menuClass} currentActive="about" />}
         </div>
       </Zoom>
-    );
+    )
   }
 }

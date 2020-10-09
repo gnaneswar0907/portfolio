@@ -1,20 +1,20 @@
-import React from "react";
-import { Route, BrowserRouter, Switch } from "react-router-dom";
+import React from "react"
+import { Route, Switch, HashRouter } from "react-router-dom"
 
-import LandingPage from "./LandingPage";
-import About from "./About";
-import Contact from "./Contact";
+import LandingPage from "./LandingPage"
+import About from "./About"
+import Contact from "./Contact"
 
 const App = () => {
   return (
-    <BrowserRouter basename="/portfolio">
+    <HashRouter>
       <Switch>
         <Route path="/" exact component={LandingPage} />
         <Route path="/about" exact component={About} />
         <Route path="/contact" exact component={Contact} />
       </Switch>
-    </BrowserRouter>
-  );
-};
+    </HashRouter>
+  )
+}
 
-export default App;
+export default App

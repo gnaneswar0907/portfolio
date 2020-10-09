@@ -1,37 +1,38 @@
-import React from "react";
+import React from "react"
 
-import { Icon } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react"
 
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import IconButton from "@material-ui/core/IconButton";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight"
+import IconButton from "@material-ui/core/IconButton"
 
-import Fade from "react-reveal/Fade";
-import Zoom from "react-reveal/Zoom";
+import Fade from "react-reveal/Fade"
+import Zoom from "react-reveal/Zoom"
 
-import "./LandingPage.css";
-import Menu from "../Menu";
+import "./LandingPage.css"
+import Menu from "../Menu"
+import { Link } from "react-router-dom"
 
 export class LandingPage extends React.Component {
-  state = { menuActive: false, menuClass: "", iconDisabled: false };
+  state = { menuActive: false, menuClass: "", iconDisabled: false }
 
   toggleMenu = () => {
-    const { menuActive, menuClass } = this.state;
-    const newMenuClass = menuClass === "Menu" ? "MenuReverse" : "Menu";
+    const { menuActive, menuClass } = this.state
+    const newMenuClass = menuClass === "Menu" ? "MenuReverse" : "Menu"
     if (menuActive) {
       this.setState({ menuClass: newMenuClass, iconDisabled: true }, () => {
         setTimeout(
           () => this.setState({ menuActive: !menuActive, iconDisabled: false }),
           1000
-        );
+        )
         // this.setState({ menuActive: !menuActive });
-      });
+      })
     } else {
-      this.setState({ menuActive: !menuActive, menuClass: newMenuClass });
+      this.setState({ menuActive: !menuActive, menuClass: newMenuClass })
     }
-  };
+  }
 
   render() {
-    const { menuClass, menuActive, iconDisabled } = this.state;
+    const { menuClass, menuActive, iconDisabled } = this.state
     return (
       <Zoom>
         <div className="HomeContent">
@@ -58,9 +59,11 @@ export class LandingPage extends React.Component {
               </p>
               <div className="DownButtonLabel">
                 <p className="LabelContent">Get to know me</p>
-                <IconButton href="/portfolio/about" className="DownButton">
-                  <ChevronRightIcon fontWeight="bold" />
-                </IconButton>
+                <Link to="/about">
+                  <IconButton className="DownButton">
+                    <ChevronRightIcon fontWeight="bold" />
+                  </IconButton>
+                </Link>
               </div>
             </Fade>
           </section>
@@ -75,6 +78,6 @@ export class LandingPage extends React.Component {
           {menuActive && <Menu currentActive="home" className={menuClass} />}
         </div>
       </Zoom>
-    );
+    )
   }
 }

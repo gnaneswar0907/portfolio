@@ -1,74 +1,89 @@
-import React from "react";
-import { Skill } from "./Skill";
+import React from "react"
+import { Skill } from "./Skill"
 
-import "./Skills.css";
-import java from "./images/java.png";
-import javascript from "./images/javascript.png";
-import react from "./images/react.png";
-import nodejs from "./images/nodejs.png";
-import aws from "./images/aws.png";
-import spring from "./images/spring.png";
-import crm from "./images/crm.png";
-import mongo from "./images/mongo.png";
-import sql from "./images/sql.svg";
-import net from "./images/net.png";
+import "./Skills.css"
+import java from "./images/java.png"
+import javascript from "./images/javascript.png"
+import react from "./images/react.png"
+import nodejs from "./images/nodejs.png"
+import aws from "./images/aws.png"
+import spring from "./images/spring.png"
+import crm from "./images/crm.png"
+import mongo from "./images/mongo.png"
+import sql from "./images/sql.svg"
+import net from "./images/net.png"
+import webpack from "./images/webpack.png"
+import ts from "./images/typescript.png"
+import babel from "./images/babel.png"
 
 const languages = [
   {
     image: javascript,
     description: "Experienced",
-    extras: ["ES6", "Jquery"]
+    extras: ["ES6", "Jquery"],
   },
   {
     image: react,
     description: "Experienced",
-    extras: ["Redux", "React Native"]
+    extras: ["Redux", "React Native"],
+  },
+  {
+    image: webpack,
+    description: "Experienced",
+  },
+  {
+    image: babel,
+    description: "Intermediate",
+  },
+  {
+    image: ts,
+    description: "Intermediate",
   },
   {
     image: java,
     description: "Experienced",
-    extras: ["MultiThreading", "Executor Framework"]
+    extras: ["MultiThreading", "Executor Framework"],
   },
   {
     image: nodejs,
     description: "Intermediate",
-    extras: ["REST API", "Socket IO"]
-  }
-];
+    extras: ["REST API", "Socket IO"],
+  },
+]
 
 const frameworks = [
   {
     image: spring,
     description: "Experienced",
-    extras: ["Spring MVC", "Spring REST", "Spring BOOT"]
+    extras: ["Spring MVC", "Spring REST", "Spring BOOT"],
   },
   {
     image: aws,
     description: "Intermediate",
-    extras: ["Certified Developer Associate", "Lambda, API Gateway"]
+    extras: ["Certified Developer Associate", "Lambda, API Gateway"],
   },
   {
     image: crm,
     description: "Intermediate",
-    extras: ["Certified Developer"]
+    extras: ["Certified Developer"],
   },
   {
     image: net,
     description: "Experienced",
-    extras: ["C#", "ASP.NET", "LINQ"]
-  }
-];
+    extras: ["C#", "ASP.NET", "LINQ"],
+  },
+]
 
 const database = [
   {
     image: sql,
-    description: "Experienced"
+    description: "Experienced",
   },
   {
     image: mongo,
-    description: "Intermediate"
-  }
-];
+    description: "Intermediate",
+  },
+]
 
 export const Languages = () => {
   return (
@@ -82,8 +97,8 @@ export const Languages = () => {
         </Skill>
       ))}
     </div>
-  );
-};
+  )
+}
 
 export const Frameworks = () => {
   return (
@@ -97,8 +112,8 @@ export const Frameworks = () => {
         </Skill>
       ))}
     </div>
-  );
-};
+  )
+}
 
 export const Database = () => {
   return (
@@ -112,5 +127,5 @@ export const Database = () => {
         </Skill>
       ))}
     </div>
-  );
-};
+  )
+}

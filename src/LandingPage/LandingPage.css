@@ -60,6 +60,7 @@
   grid-template-columns: 40% 11%;
   padding-left: 15%;
   grid-column-gap: 2%;
+  align-items: center;
 }
 
 .HomeContent .MainContent .DownButtonLabel .LabelContent {
