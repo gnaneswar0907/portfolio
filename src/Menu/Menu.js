@@ -1,13 +1,13 @@
-import React from "react";
+import React from "react"
 
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
-import { List } from "semantic-ui-react";
+import { List } from "semantic-ui-react"
 
-import Fade from "react-reveal/Fade";
+import Fade from "react-reveal/Fade"
 
-import "./Menu.css";
-import { IconList } from "../Footer";
+import "./Menu.css"
+import { IconList } from "../Footer"
 
 export const Menu = ({ className, currentActive }) => {
   return (
@@ -29,7 +29,7 @@ export const Menu = ({ className, currentActive }) => {
         </List.Item>
         <List.Item
           as="a"
-          href="https://gnaneswar-resume.s3.us-east-2.amazonaws.com/Gnaneswar_Resume.pdf"
+          href="https://drive.google.com/file/d/1YNFrKDkh6-3LZ6IBKm025OLLiSnOZ8jv/view?usp=sharing"
           target="_blank"
           className={
             currentActive === "resume" ? "MenuItem Active" : "MenuItem"
@@ -53,5 +53,5 @@ export const Menu = ({ className, currentActive }) => {
         </Fade>
       </div>
     </div>
-  );
-};
+  )
+}
